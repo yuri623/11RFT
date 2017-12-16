@@ -76,7 +76,7 @@
 	
 	<bean id="uploadDirResource" class="org.springframework.core.io.FileSystemResource">
 		<constructor-arg>
-			<value>C:\Users\bitcamp\git\06MVCShop\06.Model2MVCShop(Presentation+BusinessLogic)\WebContent\images\uploadFiles</value>
+			<value>C:\Users\Yuri\git\11RFT\11.Model2MVCShop\WebContent\images\uploadFiles</value>
 		</constructor-arg>
 	</bean>
 	

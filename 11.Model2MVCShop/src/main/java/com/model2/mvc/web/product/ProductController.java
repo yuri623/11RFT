@@ -45,7 +45,7 @@ public class ProductController {
 								HttpServletRequest request) throws Exception{
 		
 		/////////////////////////////////////////////////////////////////////
-		String realUploadPath = "C:\\workspace\\11.Model2MVCShop\\WebContent\\images\\uploadFiles\\";
+		String realUploadPath = "C:\\Users\\Yuri\\git\\11RFT\\11.Model2MVCShop\\WebContent\\images\\uploadFiles\\";
 		MultipartHttpServletRequest mpRequest = (MultipartHttpServletRequest)request;
 		Iterator fileNameIterator = mpRequest.getFileNames();
 		
@@ -98,6 +98,7 @@ public class ProductController {
 			search.setCurrentPage(1);
 		}
 		
+		System.out.println(search.getCurrentPage());
 		System.out.println("pagesize : "+pageSize);
 		System.out.println("pageUnit :: "+pageUnit);
 		if(search.getPageSize() == 0) {

@@ -130,6 +130,7 @@
 				  <input type="hidden" id="currentPage" name="currentPage" value=""/>
 				  
 				</form>
+				</
 				<form class="form-inline" name="detailForm">
 			      <div class="form-group">
 			      	<table>
@@ -202,7 +203,6 @@
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 10px;">
 			<tr>
 				<td align="center">
-					<input type="hidden" id="currentPage" name="currentPage" value="" />
 					<jsp:include page="../common/pageNavigator_new.jsp" />
 				</td>
 			</tr>
