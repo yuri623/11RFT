@@ -44,7 +44,7 @@
 		}
 		$("#currentPage").val(currentPage);
 		var currentPage = $("#currentPage").val();
-		$('form').attr("mehtod", "POST").attr("action", "/product/listProduct?menu=${param.menu}&order=${search.order}").submit();
+		$('form').attr("mehtod", "GET").attr("action", "/product/listProduct?menu="+'${param.menu}'+"&order="+'${search.order}').submit();
 	}
 	$(function() {
 		$("button.btn.btn-default:contains('검색')").bind('click', function() {
@@ -66,18 +66,13 @@
 		
 		$("button.btn-primary.btn-xs:contains('확인')").bind('click', function() {
 			fncGetList(1);
-		})
-		
-		$("td:nth-child(1)").bind('click', function() {
-			alert($('tr.ct_list_pop').index(this))
-		})
+		})		
 		
 		$("td[name=prodName]").bind('click', function() {
-			var i = $(this).index()
-			alert($('tr.ct_list_pop').index())
-			/* if($($("input:hidden[name=proTranCode]")[i]).val() == null || $($("input:hidden[name=proTranCode]")[i]).val() == "" ){			
+			var i = $('td:nth-child(3)').index(this)
+			if($($("input:hidden[name=proTranCode]")[i]).val() == null || $($("input:hidden[name=proTranCode]")[i]).val() == "" ){			
 				self.location="/product/getProduct?prodNo="+$($("input[name=prodNo]")[i]).val()+"&menu=${param.menu}"
-			}	 */
+			}
 		})
 		
 		//ok

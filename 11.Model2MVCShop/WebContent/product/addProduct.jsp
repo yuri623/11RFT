@@ -1,141 +1,107 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 
-
-
-<html><head>
-<title>상품등록</title>
-
-<link href="/css/admin.css" rel="stylesheet" type="text/css">
+<html lang="ko">
+	
+<head>
+	<meta charset="EUC-KR">
+	
+	<!-- 참조 : http://getbootstrap.com/css/   참조 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!--  ///////////////////////// Bootstrap, jQuery CDN ////////////////////////// -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+	<script src="../javascript/calendar.js" type="text/javascript"></script>
+	
+	<!-- Bootstrap Dropdown Hover CSS -->
+   <link href="/css/animate.min.css" rel="stylesheet">
+   <link href="/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+   
+    <!-- Bootstrap Dropdown Hover JS -->
+   <script src="/javascript/bootstrap-dropdownhover.min.js"></script>
+   
+	<!--  ///////////////////////// CSS ////////////////////////// -->
+	<style>
+		body {
+            padding-top : 50px;
+        }
+    </style>
+    
+     <!--  ///////////////////////// JavaScript ////////////////////////// -->
+	<script type="text/javascript">
+		$('button.btn.btn-default:contains("확인")').bind('click', function() {
+			alert()
+		})
+		$('button.btn.btn-info:contains("추가등록")').bind('click', function() {
+			alert()
+		})
+	</script>
 
 </head>
 
-<body text="#000000" bgcolor="#ffffff">
+<body>
 
-<table width="100%" height="37" border="0" cellspacing="0" cellpadding="0">
-	<tr>
-		<td width="15" height="37">
-			<img width="15" height="37" src="/images/ct_ttl_img01.gif">
-		</td>
-		<td width="100%" background="/images/ct_ttl_img02.gif" style="padding-left: 10px;">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
-				<tbody><tr>
-					<td width="93%" class="ct_ttl01">상품등록</td>
-					<td width="20%" align="right">&nbsp;</td>
-				</tr>
-			</table>
-		</td>
-		<td width="12" height="37">
-			<img width="12" height="37" src="/images/ct_ttl_img03.gif">
-		</td>
-	</tr>
-</tbody></table>
-
-<table width="100%" style="margin-top: 13px;" border="0" cellspacing="0" cellpadding="0">
-	<tbody><tr>
-		<td height="1" bgcolor="#d6d6d6" colspan="3"></td>
-	</tr>
-	<tr>
-		<td width="104" class="ct_write">
-			상품명 <img width="3" height="3" align="absmiddle" src="/images/ct_icon_red.gif">
-		</td>
-		<td width="1" bgcolor="#d6d6d6"></td>
-		<td class="ct_write01">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
-				<tbody><tr>
-					<td width="105">${product.prodName}<td/>
-					<td></td>
-				</tr>
-			</tbody></table>
-		</td>
-	</tr>
-	<tr>
-		<td height="1" bgcolor="#d6d6d6" colspan="3"></td>
-	</tr>
-
-	<tr>
-		<td width="104" class="ct_write">
-			상품상세정보 <img width="3" height="3" align="absmiddle" src="/images/ct_icon_red.gif">
-		</td>
-		<td width="1" bgcolor="#d6d6d6"></td>
-		<td class="ct_write01">${product.prodDetail}</td>
-	</tr>
-	<tr>
-		<td height="1" bgcolor="#d6d6d6" colspan="3"></td>
-	</tr>
-
-	<tr>
-		<td width="104" class="ct_write">
-			제조일자<img width="3" height="3" align="absmiddle" src="/images/ct_icon_red.gif">
-		</td>
-		<td width="1" bgcolor="#d6d6d6"></td>
-		<td class="ct_write01">${product.manuDate}</td>
-	</tr>
-	<tr>
-		<td height="1" bgcolor="#d6d6d6" colspan="3"></td>
-	</tr>
-	<tr>
-		<td width="104" class="ct_write">
-			가격<img width="3" height="3" align="absmiddle" src="/images/ct_icon_red.gif">
-		</td>
-		<td width="1" bgcolor="#d6d6d6"></td>
-		<td class="ct_write01">${product.price}</td>
-	</tr>
-
-	<tr>
-		<td height="1" bgcolor="#d6d6d6" colspan="3"></td>
-	</tr>
-	<tr>
-		<td width="104" class="ct_write">상품이미지</td>
-		<td width="1" bgcolor="#d6d6d6"></td>
-		<td class="ct_write01">
-			<!-- 테이블 시작 -->
-			<table border="0" cellspacing="0" cellpadding="0">
-				<tbody><tr>
-					<td height="26">
-						<img name="fileName" value="${product.fileName}" src="/images/uploadFiles/${product.fileName}">
-					</td>
-				</tr>
-			</tbody></table>
-		</td>
-	</tr>
-	<tr>
-		<td height="1" bgcolor="#d6d6d6" colspan="3"></td>
-	</tr>
-</tbody></table>
-
-<table width="100%" style="margin-top: 10px;" border="0" cellspacing="0" cellpadding="0">
-	<tbody><tr>
-		<td width="53%"></td>
-		<td align="right">
-			<table border="0" cellspacing="0" cellpadding="0">
-				<tbody><tr>					
-					<td width="17" height="23">
-						<img width="17" height="23" src="/images/ct_btnbg01.gif">
-					</td>
-					<td class="ct_btn01" background="/images/ct_btnbg02.gif" style="padding-top: 3px;">
-						<a href="/product/listProduct?menu=manage">확인</a>
-					</td>
-					<td width="14" height="23">
-						<img width="14" height="23" src="/images/ct_btnbg03.gif">
-					</td>
-					<td width="17" height="23">
-						<img width="17" height="23" src="/images/ct_btnbg01.gif">
-					</td>
-					<td class="ct_btn01" background="/images/ct_btnbg02.gif" style="padding-top: 3px;">
-						<a href="../product/addProductView.jsp;">추가등록</a>
-					</td>
-					<td width="14" height="23">
-						<img width="14" height="23" src="/images/ct_btnbg03.gif">
-					</td>
-				</tr>
-			</tbody></table>
-		</td>
-	</tr>
-</tbody></table>
-
-
-
-</body></html>
+	<!-- ToolBar Start /////////////////////////////////////-->
+	<jsp:include page="/layout/toolbar.jsp" />
+   	<!-- ToolBar End /////////////////////////////////////-->
+   	
+	<div class="container">
+		<form name="detailForm">
+			<div class="page-header">
+	    		<h3 class=" text-info">등록 확인</h3>
+	    		<h5 class="text-muted">다음과 같이 상품의 등록이 완료되었습니다.</h5>
+	    	</div>
+	    	
+	    	<div class="row">
+	  			<div class="col-xs-4 col-md-2"><strong>상품명</strong></div>
+				<div class="col-xs-8 col-md-4">${product.prodName}</div>
+			</div>
+			
+			<hr/>
+			
+			<div class="row">
+	  			<div class="col-xs-4 col-md-2"><strong>상품상세정보</strong></div>
+				<div class="col-xs-8 col-md-4">${product.prodDetail}</div>
+			</div>
+			
+			<hr/>
+			
+			<div class="row">
+	  			<div class="col-xs-4 col-md-2"><strong>제조일자</strong></div>
+				<div class="col-xs-8 col-md-4">${product.manuDate}</div>
+			</div>
+			
+			<hr/>
+			
+			<div class="row">
+	  			<div class="col-xs-4 col-md-2"><strong>가격</strong></div>
+				<div class="col-xs-8 col-md-4">${product.price}</div>
+			</div>
+			
+			<hr/>
+			
+			<div class="row">
+	  			<div class="col-xs-4 col-md-2 "><strong>상품이미지</strong></div>
+				<div class="col-xs-8 col-md-4">
+					<c:if test="${!empty product.fileName}">	
+						<img src="/images/uploadFiles/${product.fileName}" width="200px" height="170px">
+					</c:if>
+					<c:if test="${empty product.fileName}">
+						<img src="/images/uploadFiles/no_image.jpg" width="200px" height="170px">
+					</c:if>
+				</div>
+			</div>
+			
+			<div align="right">
+				<button class="btn btn-default">확인</button>
+				<button class="btn btn-info">추가등록</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
