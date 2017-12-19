@@ -92,26 +92,6 @@ $(function() {
 	    </div>
 <form name="detailform" class="form-horizontal" enctype="multipart/form-data">
 
-<!-- <table width="100%" height="37" border="0" cellspacing="0" cellpadding="0">
-	<tr>
-		<td width="15" height="37">
-			<img width="15" height="37" src="/images/ct_ttl_img01.gif">
-		</td>
-		<td width="100%" background="/images/ct_ttl_img02.gif" style="padding-left: 10px;">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
-				<tr>
-					<td width="93%" class="ct_ttl01">상품등록</td>
-					<td width="20%" align="right">&nbsp;</td>
-				</tr>
-			</table>
-		</td>
-		<td width="12" height="37">
-			<img width="12" height="37" src="/images/ct_ttl_img03.gif">
-		</td>
-	</tr>
-</table> -->
-
-
 	<div class="form-group">
 		    <label for="prodName" class="col-sm-offset-1 col-sm-3 control-label">상품명</label>
 		    <div class="col-sm-4">
