@@ -53,6 +53,10 @@
 				
 				$("form").attr("method","POST").attr("action","/user/login").attr("target","_parent").submit();
 			});
+			
+			$("#kakaoLogin").bind('click', function() {
+				self.location="https://kauth.kakao.com/oauth/authorize?client_id=4c6e53f28fe567efc82e2e871436b51a&redirect_uri=http://127.0.0.1:8080/oauth/rest&response_type=code"
+			})
 		});	
 		
 		
@@ -114,6 +118,8 @@
 					    <div class="col-sm-offset-4 col-sm-6 text-center">
 					      <button type="button" class="btn btn-primary"  >로 &nbsp;그 &nbsp;인</button>
 					      <a class="btn btn-primary btn" href="#" role="button">회 &nbsp;원 &nbsp;가 &nbsp;입</a>
+					      <p/><p/>
+					      <img id="kakaoLogin" src="/assets/img/docs/kakao_account_login_btn_medium_narrow.png">
 					    </div>
 					  </div>
 			

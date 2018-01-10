@@ -34,12 +34,12 @@
     </style>
     
      <!--  ///////////////////////// JavaScript ////////////////////////// -->
-	<script type="text/javascript">v
+	<script type="text/javascript">
 	function fncAddPurchase() {
-		$('form').attr('method', 'POST').attr('action', '/purchase/addPurchase').submit();
+		$('form[name="detailForm"]').attr('method', 'POST').attr('action', '/kakaoPay/readyPay').submit();
 	}
 	$(function() {
-		$('button.btn.btn-info:contains("구매")').bind('click', function() {
+		$('button.kakaoPay').bind('click', function() {
 			fncAddPurchase();
 		})
 	})
@@ -63,15 +63,26 @@
    		
 		<div class="container">
 			<form name="detailForm">
+			
+				<input type="hidden" name="cid" value="TC0ONETIME">
+				<input type="hidden" name="tax_free_amount" value="0">		
+				<!-- partner_order_id:"홍길동", -->
 				<div class="page-header">
 					<h3 class="text-info">상품 구매</h3>
 					<h5 class="text-muted">구매자 정보를 정확하게 입력해주세요</h5>
 				</div>
 				
 				<input type="hidden" name="prodNo" value="${product.prodNo}">
+				<input type="hidden" name="total_amount" value="${product.price}">
+				<input type="hidden" name="tax_free_amount" value="${product.price*0.1}">
+				<input type="hidden" name="quantity" value="1">
+				<input type="hidden" name="approval_url" value="http://127.0.0.1:8080/purchase/addPurchase.jsp">
+				<input type="hidden" name="cancel_url" value="http://127.0.0.1:8080">
+				<input type="hidden" name="fail_url" value="http://127.0.0.1:8080">
 				<div class="row">
 					<div class="col-xs-4 col-md-2"><strong>상품명</strong></div>
 					<div class="col-xs-8 col-md-4">${product.prodName}</div>
+					<input type="hidden" name="item_name" value="${product.prodName}">
 				</div>
 				
 				<hr/>
@@ -91,8 +102,8 @@
 				<hr/>
 				
 				<div class="row">
-					<div class="col-xs-4 col-md-2"><strong>가격</strong></div>
-					<div class="col-xs-8 col-md-4">${product.price}</div>
+					<div class="col-xs-4 col-md-2"><strong>가격</strong></
+					<input type="hidden" name="partner_user_id" value="${user.userId}">
 				</div>
 				
 				<hr/>
@@ -100,6 +111,7 @@
 				<div class="row">
 					<div class="col-xs-4 col-md-2"><strong>구매자 아이디</strong></div>
 					<div class="col-xs-8 col-md-4">${user.userId}</div>
+					<input type="hidden" name="partner_user_id" value="${user.userId}">
 				</div>
 				
 				<hr/>
@@ -150,8 +162,8 @@
 				</div>
 				
 				<div align="right">
-					<button class="btn btn-info">구매</button>
-					<button class="btn btn-default">취소</button>
+					<button type="button" class="kakaoPay"><img src="/assets/img/docs/ico_pay_320.png"/></button>
+					<button type="button" class="btn btn-default">취소</button>
 				</div>
 			</form>
 		</div>
